@@ -4,20 +4,9 @@ import Image from 'next/image';
 export default function HomeContent() {
   return (
     <div className="min-h-screen text-[#0F172A] font-sans selection:bg-[#E63946] selection:text-white overflow-x-hidden relative">
-      {/* Dynamic Background - Fixed at z-0 */}
-      <div className="fixed inset-0 z-0">
-        <Image
-          src="/assets/backgrounds/new.png"
-          alt="Geometric Background"
-          fill
-          className="object-cover opacity-20"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-[#F8FAFC]/80"></div>
-      </div>
 
-      {/* Navbar - Relative z-50 */}
-      <nav className="sticky top-0 z-50 w-full glass border-b border-white/20 relative">
+      {/* Navbar - Fixed z-50 */}
+      <nav className="fixed top-0 left-0 right-0 z-50 w-full glass border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0 flex items-center gap-2">
@@ -47,7 +36,18 @@ export default function HomeContent() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
+      <section className="relative z-10 pt-36 pb-32 lg:pt-48 lg:pb-48 overflow-hidden">
+        {/* Hero Background */}
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="/assets/backgrounds/new.png"
+            alt="Geometric Background"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-[#F8FAFC]/80"></div>
+        </div>
 
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#1D4ED8]/10 to-[#2563EB]/5 blur-3xl animate-float -z-10"></div>
         <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#E63946]/10 to-[#FA8072]/5 blur-3xl animate-float-delayed -z-10"></div>
