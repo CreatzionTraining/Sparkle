@@ -1,15 +1,11 @@
 import React from 'react';
-import { Courses } from './Courses';
-import { Footer } from './Footer';
-import { Certificates } from './Certificates';
+import Image from 'next/image';
 
 export default function HomeContent() {
   return (
-    <div className="min-h-screen text-[#0F172A] font-sans selection:bg-[#E63946] selection:text-white overflow-x-hidden relative">
-
-
-      {/* Navbar - Relative z-50 */}
-      <nav className="fixed top-0 left-0 right-0 z-50 w-full glass border-b border-white/20">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans selection:bg-[#E63946] selection:text-white overflow-x-hidden">
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 w-full glass border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0 flex items-center gap-2">
@@ -31,7 +27,7 @@ export default function HomeContent() {
             </div>
             <div className="md:hidden flex items-center">
               <button className="text-gray-700 hover:text-[#1D4ED8]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
               </button>
             </div>
           </div>
@@ -39,54 +35,199 @@ export default function HomeContent() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-[#1D4ED8]/10 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#E63946]/10 blur-3xl"></div>
+      <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
+        {/* Dynamic Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-[120%] bg-gradient-to-b from-blue-50/50 to-white -z-20"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#1D4ED8]/20 to-[#2563EB]/5 blur-3xl animate-float -z-10"></div>
+        <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#E63946]/15 to-[#FA8072]/5 blur-3xl animate-float-delayed -z-10"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-[#1D4ED8] font-semibold text-sm mb-6 border border-blue-100">
-              🚀 Start your study abroad journey today
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#0F172A] mb-8 leading-tight">
-              Unlock Your Global Potential with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1D4ED8] to-[#2563EB]">Sparkle</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-              Master IELTS, TOEFL, PTE, GRE, and GMAT with our expert-led training.
-              We don't just teach; we pave the way for your international success.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="w-full sm:w-auto px-8 py-4 bg-[#E63946] hover:bg-[#D62839] text-white rounded-full font-semibold text-lg transition-all shadow-xl shadow-red-500/20 hover:shadow-red-500/30 flex items-center justify-center gap-2">
-                Get Started Free
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-              </button>
-              <button className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-50 text-[#0F172A] border border-gray-200 rounded-full font-semibold text-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-                <svg className="w-5 h-5 text-[#1D4ED8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                Watch Demo
-              </button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Hero Text */}
+            <div className="text-center lg:text-left z-10">
+              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full glass mb-8 border border-blue-100 shadow-sm animate-fade-in-up">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E63946]"></span>
+                </span>
+                <span className="text-[#1D4ED8] font-semibold text-sm tracking-wide uppercase">#1 Rated Study Abroad Platform</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-[#0F172A] mb-8 leading-[1.1]">
+                Master Global <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E63946] via-[#D62839] to-[#1D4ED8]">
+                  Exams & Languages
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                Expert coaching for IELTS, TOEFL, GRE, GMAT & language training.
+                Your gateway to study abroad success and global career opportunities.
+              </p>
+
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <div className="flex items-center gap-2 px-4 py-2 glass rounded-lg text-sm font-semibold text-[#1D4ED8]">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                  Test Prep
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 glass rounded-lg text-sm font-semibold text-[#E63946]">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                  Study Abroad
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 glass rounded-lg text-sm font-semibold text-purple-600">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-8a2 2 0 012-2h14a2 2 0 012 2v8M3 21h18M3 21l8-8m10 8l-8-8"></path></svg>
+                  Languages
+                </div>
+              </div>
+
+              <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+                <button className="px-8 py-4 bg-gradient-to-r from-[#E63946] to-[#D62839] hover:from-[#D62839] hover:to-[#C52233] text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-1 flex items-center justify-center gap-3">
+                  Book Free Demo
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+                <button className="px-8 py-4 bg-[#00D757] hover:bg-[#00c44e] text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-green-500/25 hover:shadow-green-500/40 hover:-translate-y-1 flex items-center justify-center gap-3">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>
+                  WhatsApp Us
+                </button>
+              </div>
+
+              <div className="mt-12 grid grid-cols-3 gap-8 border-t border-gray-200 pt-8">
+                <div className="text-center lg:text-left">
+                  <p className="font-bold text-3xl text-[#E63946] mb-1">50K+</p>
+                  <p className="text-sm font-medium text-gray-500">Students Trained</p>
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="font-bold text-3xl text-[#1D4ED8] mb-1">95%</p>
+                  <p className="text-sm font-medium text-gray-500">Success Rate</p>
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="font-bold text-3xl text-purple-600 mb-1">15+</p>
+                  <p className="text-sm font-medium text-gray-500">Years Experience</p>
+                </div>
+              </div>
+
             </div>
 
-            <div className="mt-12 flex items-center justify-center gap-8 text-gray-400 grayscale opacity-70">
-              {/* Trust badges placeholders */}
-              <span className="font-bold text-xl">IDP</span>
-              <span className="font-bold text-xl">British Council</span>
-              <span className="font-bold text-xl">Pearson</span>
-              <span className="font-bold text-xl">ETS</span>
+            {/* Hero Visual */}
+            <div className="relative z-10 hidden lg:block perspective-1000">
+              <div className="relative w-full aspect-square max-w-[600px] mx-auto animate-float">
+                {/* Main Glass Card */}
+                <div className="absolute inset-4 glass rounded-3xl z-10 overflow-hidden transform rotate-2 hover:rotate-0 transition-all duration-700 shadow-2xl">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/assets/3d/test-prep.png"
+                      alt="Test Preparation 3D"
+                      fill
+                      className="object-contain p-8 hover:scale-105 transition-transform duration-700"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Floating Elements */}
+                <div className="absolute top-0 right-0 glass-dark p-4 rounded-2xl z-20 animate-float-delayed shadow-xl backdrop-blur-md">
+                  <div className="flex flex-col items-center">
+                    <span className="text-xs text-gray-300 mb-1">Average Score</span>
+                    <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E63946] to-pink-500">8.5/9</span>
+                    <span className="text-xs font-medium text-white/80">IELTS Band</span>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-6 left-10 glass-dark p-4 rounded-2xl z-20 animate-float shadow-xl backdrop-blur-md flex items-center gap-3">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className={`w-8 h-8 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600`}></div>
+                    ))}
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-white">2,500+</p>
+                    <p className="text-[10px] text-gray-300 leading-tight">Study Abroad Success</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* Courses Grid */}
-      {/* Courses Grid */}
-      <Courses />
+      {/* 3D Visual Experience Section */}
+      <section className="py-24 bg-gradient-to-b from-[#F8FAFC] to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      {/* Certificates Section */}
-      <Certificates />
+            {/* 3D Card 1 */}
+            <div className="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-red-500/20 hover:-translate-y-2">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#E63946] to-[#FF9E00]"></div>
+              <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+              <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">
+                <h3 className="text-5xl font-extrabold text-white mb-2 drop-shadow-md">A+</h3>
+                <div className="w-24 h-1 bg-white/50 rounded-full mb-8"></div>
+              </div>
 
-      {/* Footer Placeholder */}
-      <Footer />
+              <div className="absolute bottom-0 left-0 w-full glass p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-xl font-bold text-[#0F172A]">Test Prep</h4>
+                <p className="text-sm text-gray-600">IELTS, OET, PTE, TOEFL</p>
+              </div>
+            </div>
+
+            {/* 3D Card 2 */}
+            <div className="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-blue-500/20 hover:-translate-y-2">
+              <div className="absolute inset-0 bg-gray-100"></div>
+              <div className="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700">
+                <div className="relative w-64 h-64">
+                  <Image
+                    src="/assets/3d/languages.png"
+                    alt="Global Languages"
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                  />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 w-full glass p-6">
+                <h4 className="text-xl font-bold text-[#0F172A]">Foreign Languages</h4>
+                <p className="text-sm text-gray-600">German, French, Spanish, Japanese</p>
+              </div>
+            </div>
+
+            {/* 3D Card 3 */}
+            <div className="group relative h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:-translate-y-2">
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-100 to-white"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Placeholder for 3rd 3D asset if we had one, recreating simple shapes */}
+                <div className="w-40 h-40 glass rounded-full flex items-center justify-center shadow-inner relative overflow-hidden group-hover:scale-110 transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent"></div>
+                  <Image
+                    src="/assets/3d/test-prep.png"
+                    alt="Test Prep"
+                    width={100}
+                    height={100}
+                    className="object-contain opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                  />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 w-full glass p-6">
+                <h4 className="text-xl font-bold text-[#0F172A]">Global Careers</h4>
+                <p className="text-sm text-gray-600">Study & Work Abroad Consultation</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+        <button className="w-14 h-14 bg-[#1D4ED8] text-white rounded-full shadow-lg shadow-blue-500/30 flex items-center justify-center hover:scale-110 transition-transform">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        </button>
+        <button className="w-14 h-14 bg-[#00D757] text-white rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center hover:scale-110 transition-transform animate-bounce">
+          <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>
+        </button>
+      </div>
+
     </div>
   );
 }
